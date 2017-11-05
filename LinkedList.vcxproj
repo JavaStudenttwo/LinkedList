@@ -19,12 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayList.h" />
     <ClInclude Include="LinkedList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="LinkedListTest.c" />
-    <ClCompile Include="ListSort.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{27C4ED2F-CEDA-4133-A8F0-D8C5647A0351}</ProjectGuid>

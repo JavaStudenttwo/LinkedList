@@ -18,15 +18,15 @@
     <ClInclude Include="LinkedList.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ArrayList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinkedList.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LinkedListTest.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ListSort.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

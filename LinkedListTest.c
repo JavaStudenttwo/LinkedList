@@ -3,7 +3,6 @@
 node * testAdd(node * phead);
 node * testDelete(node * phead);
 void testSearch(node * phead ,int data);
-void testSrot_1(phead);
 
 int main(void) {
 	
@@ -15,7 +14,6 @@ int main(void) {
 	testSearch(phead,383);
 
 	phead = testDelete(phead);
-	testSrot_1(phead);
 
 	system("pause");
 	return 0;
@@ -64,8 +62,3 @@ END:printf("¼ìË÷½áÊø");
 
 }
 
-void testSrot_1(phead) {
-
-	phead = bubbleSort(phead);
-	showAll(phead);
-}
