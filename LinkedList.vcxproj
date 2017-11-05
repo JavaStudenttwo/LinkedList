@@ -20,16 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayList.h" />
-    <ClInclude Include="LinkedList.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LinkedList.c" />
-    <ClCompile Include="LinkedListTest.c" />
+    <ClCompile Include="TestList.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{27C4ED2F-CEDA-4133-A8F0-D8C5647A0351}</ProjectGuid>
     <RootNamespace>LinkedList</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>List</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
