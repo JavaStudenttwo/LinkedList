@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main() {
+int main1() {
 	ArrayList<int> test(7);
 	int array[7] = {1,2,3,4,5,6};
 

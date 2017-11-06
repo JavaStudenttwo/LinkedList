@@ -24,7 +24,8 @@
     <ClInclude Include="SingleLinkedListNode.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TestList.cpp" />
+    <ClCompile Include="TesArraytList.cpp" />
+    <ClCompile Include="TestSingleLinkedList.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{27C4ED2F-CEDA-4133-A8F0-D8C5647A0351}</ProjectGuid>
