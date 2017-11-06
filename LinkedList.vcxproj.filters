@@ -18,6 +18,12 @@
     <ClInclude Include="ArrayList.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="SingleLinkedList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleLinkedListNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestList.cpp">

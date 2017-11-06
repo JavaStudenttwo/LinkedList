@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayList.h" />
+    <ClInclude Include="SingleLinkedList.h" />
+    <ClInclude Include="SingleLinkedListNode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TestList.cpp" />
