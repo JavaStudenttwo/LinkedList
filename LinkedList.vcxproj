@@ -20,11 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayList.h" />
+    <ClInclude Include="DoubleLinkedList.h" />
+    <ClInclude Include="DoubleLinkedListNode.h" />
     <ClInclude Include="SingleLinkedList.h" />
     <ClInclude Include="SingleLinkedListNode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TesArraytList.cpp" />
+    <ClCompile Include="TestDoubleLinkedList.cpp" />
     <ClCompile Include="TestSingleLinkedList.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

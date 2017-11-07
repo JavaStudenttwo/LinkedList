@@ -14,16 +14,17 @@ public:
 	void MakeEmpty();
 	void Insert(Type item, int i = 0);
 	void Remove(int i = 0);
+	void RemoveAll(Type item);
 	//返回单聊表的基本信息
 	int length();
 	Type Get(int i);
 	//查找和排序
-	SingleLinkedList<Type> * SequentialSearch(Type item);
+	SingleLinkedListNode<Type> * SequentialSearch(Type item);
 	//基础功能
 	void Print();
 
 private:
-	//链表的节点是私有的
+	//链表的头节点是私有的
 	SingleLinkedListNode<Type> *head;
 
 };
@@ -75,13 +76,30 @@ void SingleLinkedList<Type>::Remove(int i = 0) {
 	}
 	if (pmove->pnext == nullptr)
 	{
-		cout << "" << endl;
+		cout << "删除出错" << endl;
 	}
 	pdel = pmove->pnext;
 	pmove->pnext = pdel->pnext;
 	delete pdel;
 }
 
+//删除单链表中与目标元素匹配的所有项
+template <typename Type>
+void SingleLinkedList<Type>::RemoveAll(Type item) {
+	SingleLinkedListNode<Type> *pmove = head;
+	SingleLinkedListNode<Type> *pdel = head->pnext;
+	while (pdel != nullptr)
+	{
+		if (pdel->data == item) {
+			pmove->pnext = pdel->pnext;
+			delete pdel;
+			pdel = pmove->pnext;
+			continue;
+		}
+		pmove = pmove->pnext;
+		pdel = pdel->pnext;
+	}
+}
 
 //返回单链表长度
 template<typename Type>
@@ -97,7 +115,7 @@ int SingleLinkedList<Type>::length() {
 
 //顺序查找
 template<typename Type>
-SingleLinkedList<Type> * SingleLinkedList<Type>::SequentialSearch(Type item) {
+SingleLinkedListNode<Type> * SingleLinkedList<Type>::SequentialSearch(Type item) {
 	
 	SingleLinkedListNode<Type> *pmove = head->pnext;
 	for (int i = 0; i < n&&pmove; i++)
@@ -108,6 +126,7 @@ SingleLinkedList<Type> * SingleLinkedList<Type>::SequentialSearch(Type item) {
 	{
 		cout << "" << endl;
 	}
+	return nullptr;
 }
 
 //打印单链表中的所有数据

@@ -24,12 +24,21 @@
     <ClInclude Include="SingleLinkedListNode.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DoubleLinkedListNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleLinkedList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TesArraytList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="TestSingleLinkedList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestDoubleLinkedList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
