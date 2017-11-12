@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main() {
+int main1() {
 	DoubleLinkedList<int> list;
 
 	for (int i = 0; i < 20; i++)

@@ -3,9 +3,9 @@
 
 using namespace std;
 
-int main1() {
+int main() {
 	ArrayList<int> test(7);
-	int array[7] = {1,2,3,4,5,6};
+	int array[7] = {4,2,5,1,3,6};
 
 	for (int i = 0; i < 6; i++)
 	{
@@ -19,6 +19,9 @@ int main1() {
 	test.InterpolateSearch(5);
 	test.InterpolateSearch(4);
 
+
+	test.SelectSort();
+	test.Print();
 
 	cin.get();
 	return 0;

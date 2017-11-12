@@ -25,9 +25,11 @@ public:
 	int BinarySearch(Type x);
 	int InterpolateSearch(Type x);
 	//排序
-	int BbSort(Type x);
+	void BubbleSort();
+	void SelectSort();
 	//基础功能
 	void Print();
+	void Swap(Type *x, Type *y);
 
 private:
 	Type *elements;
@@ -190,6 +192,22 @@ int ArrayList<Type>::InterpolateSearch(Type x) {
 	return -1;
 }
 
+template <typename Type>
+void ArrayList<Type>::BubbleSort() {
+	
+}
+
+template <typename Type>
+void ArrayList<Type>::SelectSort() {
+	for (int i = 0; i < currentsize; i++) {
+		for (int j = i + 1; j < currentsize; j++) {
+			if (elements[i] > elements[j]) {
+				Swap(&elements[i], &elements[j]);
+			}
+		}
+	}
+}
+
 //打印顺序表的所有元素
 template <typename Type>
 void ArrayList<Type>::Print() {
@@ -199,5 +217,16 @@ void ArrayList<Type>::Print() {
 		cout << "第" << i + 1 << "项的值为"<< ":\t" << elements[i] << endl;
 	}
 	cout << endl << endl;
+
+	cout << endl << currentsize << endl;
 }
  
+//交换两元素的位置
+template <typename Type>
+void ArrayList<Type>::Swap(Type *x, Type *y) {
+	Type z;
+	z = *x;
+	*x = *y;
+	*y = z;
+}
+
