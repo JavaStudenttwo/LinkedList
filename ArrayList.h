@@ -27,14 +27,21 @@ public:
 	//排序
 	void BubbleSort();
 	void SelectSort();
+	void InsertSort_attempt();
+	void InsertSort(ArrayList &list);
 	//基础功能
 	void Print();
-	void Swap(Type *x, Type *y);
+
+	Type * GetElements();
 
 private:
 	Type *elements;
 	const int maxsize;
 	int currentsize;
+
+	//内部调用的方法
+	void Swap(Type &x, Type &y);
+	void InsertSort(ArrayList &list, int i);
 
 };
 
@@ -192,21 +199,87 @@ int ArrayList<Type>::InterpolateSearch(Type x) {
 	return -1;
 }
 
+//冒泡排序
 template <typename Type>
 void ArrayList<Type>::BubbleSort() {
-	
+	int flag = 0;
+	for (int i = 0; i < currentsize; i++) {
+		for (int j = currentsize; j > i; j--) {
+			if (elements[j] < elements[j-1]) {
+				Swap(elements[j], elements[j-1]);
+				flag = 1;
+			}
+		}
+		if (flag == 0){	break; }
+		flag = 0;
+	}
 }
 
+//选择排序
 template <typename Type>
 void ArrayList<Type>::SelectSort() {
-	for (int i = 0; i < currentsize; i++) {
-		for (int j = i + 1; j < currentsize; j++) {
+	for (int i = 0; i <= currentsize; i++) {
+		for (int j = i + 1; j <= currentsize; j++) {
 			if (elements[i] > elements[j]) {
-				Swap(&elements[i], &elements[j]);
+				Swap(elements[i], elements[j]);
 			}
 		}
 	}
 }
+
+//插入排序，失败的尝试
+template <typename Type>
+void ArrayList<Type>::InsertSort_attempt() {
+	//定义另一个Type数组temp
+	Type * temp = new Type[currentsize];
+	//将elements[0]作为temp的第一个元素，并将temp长度设为1
+	int size = 1;
+	temp[0] = elements[0];
+	//循环插入元素
+	for (int i = 1; i < currentsize; i++){
+		//声明一个Type类型数据，作为待插入元素
+		Type element = elements[i];
+		cout << "内部" << elements[i] << endl;
+		//遍历temp，找到插入点
+		for (int j = 0; j < size; j++) {
+			if (temp[j] < element) {
+				//将表中元素全部向后移动一个单位
+				for (int z = size + 1; z > j; z--){
+					temp[z + 1] = temp[z];
+				}
+				temp[j] = element;
+				cout << "外部" << element << endl;
+			}
+		}
+		//插入一个元素后,temp长度增一
+		size++;
+	}
+}
+
+//插入排序
+template <typename Type>
+void ArrayList<Type>::InsertSort(ArrayList &list) {
+	for (int i = 1; i < list.currentsize + 1; i++) {
+		InsertSort(list, i);
+	}
+}
+
+template <typename Type>
+void ArrayList<Type>::InsertSort(ArrayList &list, int i) {
+	Type temp = list.elements[i];
+	int j;
+	for (j = i; j > 0; j--) {
+		if (temp > list.elements[j - 1]) {
+			break;
+		}
+		else {
+			list.elements[j] = list.elements[j - 1];
+		}
+	}
+	list.elements[j] = temp;
+}
+
+
 
 //打印顺序表的所有元素
 template <typename Type>
@@ -220,13 +293,18 @@ void ArrayList<Type>::Print() {
 
 	cout << endl << currentsize << endl;
 }
+
+template <typename Type>
+Type * ArrayList<Type>::GetElements() {
+	return elements;
+}
  
 //交换两元素的位置
 template <typename Type>
-void ArrayList<Type>::Swap(Type *x, Type *y) {
+void ArrayList<Type>::Swap(Type &x, Type &y) {
 	Type z;
-	z = *x;
-	*x = *y;
-	*y = z;
+	z = x;
+	x = y;
+	y = z;
 }
 
